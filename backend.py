@@ -235,9 +235,6 @@ def get_movie_details(film, api_key=None):
         return {'Error': f"Failed to fetch movie details: {e}"}
 
 
-import pandas as pd
-from datetime import datetime
-
 # Set a specific date for the weekend you want to analyze
 date_to_analyze = '2024-01-01'  # Example: Use any date in 'YYYY-MM-DD' format
 
@@ -275,12 +272,7 @@ if top_films:
 
         tmdb_data = get_movie_details(selected_film_name)
 
-        # Combine Box Office Mojo data with TMDB data
-        combined_data = film_data.assign(**tmdb_data)
 
-        # Display the final combined data
-        print(f"Combined data for {selected_film_name}:")
-        print(combined_data)
     else:
         print("Invalid selection. Please choose a number from the list.")
 else:
